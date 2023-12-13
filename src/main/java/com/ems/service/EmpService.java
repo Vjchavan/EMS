@@ -5,6 +5,9 @@ import com.ems.repository.EmpRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EmpService {
 
@@ -13,6 +16,14 @@ public class EmpService {
 
     public void addEmp(Employee emp){
         repo.save(emp);
+    }
+
+    public List<Employee> getAllEmp(){
+        return repo.findAll();
+    }
+
+    public Optional<Employee> getEmpById(int id){
+        return repo.findById(id);
     }
 
 }

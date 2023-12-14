@@ -26,4 +26,7 @@ public class EmpService {
         return repo.findById(id);
     }
 
+    public void deleteEmp(int id) {
+        repo.deleteById(id);
+    }
 }
